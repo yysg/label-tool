@@ -9,9 +9,9 @@ WORKDIR /uploads
 WORKDIR /app
 COPY . .
 RUN yarn install
-RUN cd client && yarn install
+# RUN cd client && yarn install
 RUN cd server && yarn install
-RUN cd client && yarn build
+# RUN cd client && yarn build
 
 ENV DATABASE_FILE_PATH=/db/db.sqlite
 ENV UPLOADS_PATH=/uploads
