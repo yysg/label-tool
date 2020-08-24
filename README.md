@@ -114,3 +114,12 @@ CURRENT_UID=$(id -u):$(id -g) docker-compose up -d
 ## Project Support and Development
 
 This project has been developed as part of my internship at the [NCSOFT](http://global.ncsoft.com/global/) Vision AI Lab in the beginning of 2019.
+
+#!/bin/bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+command -v nvm
+nvm install 10.15.2
+node -v
+git clone https://github.com/yysg/label-tool.git
