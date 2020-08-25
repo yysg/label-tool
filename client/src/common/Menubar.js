@@ -10,7 +10,7 @@ export default class Menubar extends Component {
       <div style={{ background: '#f7f7f7', minHeight: '100vh' }}>
         <Menu inverted>
           <Container>
-            <Menu.Item header>Image Labeling</Menu.Item>
+            <Menu.Item header>Image Labeling2</Menu.Item>
             <Link to="/">
               <Menu.Item active={active === 'label'}>
                 <Icon name="tag" style={{ marginRight: '5px' }} />
