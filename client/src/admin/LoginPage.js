@@ -14,14 +14,9 @@ export default class LoginPage extends Component {
 
   async onSubmit(e) {
     // const { password } = this.state;
-    try {
-      const resp = await (await fetch('/api/ip', {
-        mode: 'no-cors',
-      })).json();
-    } catch (error) {
-      console.log(error);
-    }
-    const resp = {};
+    const resp = await (await fetch(
+      'http://ec2-52-53-200-7.us-west-1.compute.amazonaws.com:3001/api/ip'
+    )).json();
     console.log(resp);
     console.log(this.props);
     if (resp.success) {
