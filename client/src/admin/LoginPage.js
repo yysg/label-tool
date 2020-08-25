@@ -13,11 +13,16 @@ export default class LoginPage extends Component {
   }
 
   async onSubmit(e) {
-    const { password } = this.state;
-    const resp = await fetch('/api/auth?password=' + password);
-    if (resp.ok) {
-      this.setState({ error: null });
-      window.location = '/admin/';
+    // const { password } = this.state;
+    const resp = await (await fetch(
+      'http://ec2-52-53-200-7.us-west-1.compute.amazonaws.com:3001/api/ip',
+      { mode: 'no-cors' }
+    )).json();
+    console.log(resp);
+    console.log(this.props);
+    if (resp.success) {
+      this.setState({ error: null, ip: resp.ip });
+      // window.location = '/admin/';
     } else {
       this.setState({ error: 'Wrong password' });
     }
@@ -33,7 +38,8 @@ export default class LoginPage extends Component {
             type="password"
             label="Password"
           />
-          <Form.Button>Submit</Form.Button>
+          <Form.Button>获取IP</Form.Button>
+          <div>{this.state.ip ? this.state.ip : ''}</div>
           <p style={{ color: 'red' }}>{this.state.error}</p>
         </Form>
       </Segment>

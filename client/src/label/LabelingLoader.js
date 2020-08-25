@@ -23,6 +23,12 @@ export default class LabelingLoader extends Component {
       const path = typeof args[0] === 'string' ? args[0] : args[0].pathname;
       return demoMocks[path](...args);
     }
+    const base = 'http://ec2-52-53-200-7.us-west-1.compute.amazonaws.com:3001';
+
+    const path = typeof args[0] === 'string' ? args[0] : args[0].pathname;
+    if (args[0] === 'string') {
+      args[0] = base + path;
+    }
 
     return await fetch(...args);
   }
