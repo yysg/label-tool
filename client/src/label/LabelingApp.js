@@ -374,7 +374,7 @@ class LabelingApp extends Component {
       >
         This is a demo page. The changes will not be saved and all network
         responses are static.{' '}
-        <a target="_blank" href="https://github.com/Slava/label-tool">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Slava/label-tool">
           GitHub repo
         </a>
       </div>
