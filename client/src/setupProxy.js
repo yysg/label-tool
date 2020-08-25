@@ -6,7 +6,6 @@ module.exports = function(app) {
   app.use(
     proxy('/api', {
       target: `http://ec2-52-53-200-7.us-west-1.compute.amazonaws.com:3001/`,
-      changeOrigin: true,
     })
   );
   app.use(
