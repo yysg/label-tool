@@ -287,7 +287,7 @@ class Canvas extends Component {
             <a
               role="button"
               title="Zoom reset"
-              href="#"
+              href="#/"
               onClick={() => {
                 const map = this.mapRef.current.leafletElement;
                 map.setView(map.options.center, map.options.zoom);
