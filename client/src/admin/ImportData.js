@@ -19,10 +19,14 @@ export default class ImportData extends Component {
     const formData = new FormData(form);
 
     this.setState({ message: null });
-    const res = await fetch('/api/import/' + this.props.projectId, {
-      method: 'POST',
-      body: formData,
-    });
+    const res = await fetch(
+      'http://label-tool-302740590.us-west-1.elb.amazonaws.com:3001/api/import/' +
+        this.props.projectId,
+      {
+        method: 'POST',
+        body: formData,
+      }
+    );
     const { message } = await res.json();
     this.setState({
       message,

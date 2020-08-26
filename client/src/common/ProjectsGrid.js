@@ -35,7 +35,10 @@ export default class ProjectsGrid extends Component {
   }
 
   async onNewProject() {
-    const newProjectRes = await fetch('/api/projects', { method: 'POST' });
+    const newProjectRes = await fetch(
+      'http://label-tool-302740590.us-west-1.elb.amazonaws.com:3001/api/projects',
+      { method: 'POST' }
+    );
     const newProject = await newProjectRes.json();
     this.setState({
       projects: this.state.projects.concat([newProject]),
