@@ -15,7 +15,7 @@ export default class LoginPage extends Component {
   async onSubmit(e) {
     // const { password } = this.state;
     const resp = await (await fetch(
-      'http://label-tool-302740590.us-west-1.elb.amazonaws.com:3001/api/ip'
+      'http://label-tool-302740590.us-west-1.elb.amazonaws.com/api/ip'
     )).json();
     console.log(resp);
     console.log(this.props);

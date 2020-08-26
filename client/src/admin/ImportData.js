@@ -20,7 +20,7 @@ export default class ImportData extends Component {
 
     this.setState({ message: null });
     const res = await fetch(
-      'http://label-tool-302740590.us-west-1.elb.amazonaws.com:3001/api/import/' +
+      'http://label-tool-302740590.us-west-1.elb.amazonaws.com/api/import/' +
         this.props.projectId,
       {
         method: 'POST',
